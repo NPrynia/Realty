@@ -1,0 +1,175 @@
+﻿<Page x:Class="Realty.Pages.RentApartment"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Realty.Pages"
+      xmlns:gu="https://github.com/GuOrg/Gu.Wpf.FlipView"
+      mc:Ignorable="d" 
+      Background="#F7F8FC"
+      d:DesignHeight="450" d:DesignWidth="1000"
+      Title="RentApartment">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="12*"/>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="12*"/>
+        </Grid.RowDefinitions>
+        <Border Background="#DCDFEE">
+
+            <WrapPanel 
+            VerticalAlignment="Center" 
+            HorizontalAlignment="Center" >
+                <TextBlock
+                Text="Поиск :"
+                FontSize="30"
+                FontWeight="Light"
+                TextAlignment="Center"
+                
+                />
+                <TextBox
+                    TextChanged="tbSearch_TextChanged"
+                x:Name="tbSearch" 
+                   FontSize="20"
+                FontWeight="Light"
+                Margin="10 0 0 0"
+                Width="275"
+                Height="42"
+               
+                />
+                <TextBlock
+                Text="Сортировать:"
+                   FontSize="30"
+                FontWeight="Light"
+                Margin="10 0 0 0"
+                
+                />
+                <ComboBox
+                x:Name="cbSort"
+                FontSize="20"
+                    SelectionChanged="cbSort_SelectionChanged"
+                FontWeight="Light"
+                Margin="10 0 0 0"
+                Width="275"
+                Height="42"
+                />
+
+            </WrapPanel>
+        </Border>
+
+        <ListView
+            Grid.Row="1"
+            KeyDown="lvDel_KeyDown"
+            ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+            MouseDoubleClick="lvRentApartment_MouseDoubleClick"
+            x:Name="lvRentApartment"
+            HorizontalAlignment="Center">
+            <ListView.ItemsPanel 
+            >
+                <ItemsPanelTemplate >
+                    <WrapPanel />
+                </ItemsPanelTemplate >
+            </ListView.ItemsPanel >
+            <ListView.ItemTemplate >
+
+                <DataTemplate>
+                    <Border
+                                        Margin="10"
+                                        Height="450" Width="450"
+                                        Background="#DCDFEE"
+                                        >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="13*"/>
+                                <RowDefinition Height="7*"/>
+                            </Grid.RowDefinitions>
+                            <Border
+                                         Height="3"
+                                         Grid.Row="2"
+                                         VerticalAlignment="Top"
+                                         Background="#202136"
+                                         />
+
+                            <gu:FlipView  Name="fv"
+                                Loaded="LoadedLv"
+                                >
+
+                            </gu:FlipView>
+
+
+                            <StackPanel
+                                      Margin="10"
+                                      Grid.Row="1"
+                                      >
+                                <StackPanel Orientation="Horizontal"
+                                            
+                                          Margin="10 15 0 0"
+                                            >
+                                    <TextBlock
+                                    
+                                          FontSize="25"
+                                          FontFamily="Microsoft JhengHei UI Light"
+                                          Text="{Binding Cost}"
+                                          Foreground="#202136"
+                                      />
+                                    <TextBlock
+                                          FontFamily="Microsoft JhengHei UI Light"
+                                          FontSize="25"
+                                          Text=" руб."
+                                          Foreground="#202136"
+                                      />
+                                </StackPanel>
+                               
+                                <WrapPanel 
+                                    Margin="10 15 0 0"
+                                      Grid.Row="1"
+                                       >
+                                    <TextBlock
+                                          FontFamily="Microsoft JhengHei UI Light"
+                                          FontSize="25"
+                                          Text="{Binding Street.City.Name}"
+                                          Foreground="#202136"
+                                      />
+                                    <TextBlock
+                                          FontFamily="Microsoft JhengHei UI Light"
+                                          FontSize="25"
+                                          Text=", "
+                                          Foreground="#202136"
+                                      />
+                                    <TextBlock
+                                          FontFamily="Microsoft JhengHei UI Light"
+                                          FontSize="25"
+                                          Text="{Binding Street.Name}"
+                                          Foreground="#202136"
+                                      />
+                                    <TextBlock
+                                          FontFamily="Microsoft JhengHei UI Light"
+                                          FontSize="25"
+                                          Text=", "
+                                          Foreground="#202136"
+                                      />
+                                    <TextBlock
+                                          FontFamily="Microsoft JhengHei UI Light"
+                                          FontSize="25"
+                                          Text="{Binding NumberHouse}"
+                                          Foreground="#202136"
+                                      />
+
+                                </WrapPanel>
+
+
+                            </StackPanel>
+
+
+                        </Grid>
+                    </Border>
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+
+
+    </Grid>
+</Page>

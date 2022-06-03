@@ -1,0 +1,47 @@
+﻿<Application x:Class="Realty.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+             StartupUri="Windows/MainWindow.xaml"
+             xmlns:local="clr-namespace:Realty"
+             xmlns:controls="using:Microsoft.UI.Xaml.Controls" 
+             xmlns:ui="http://schemas.modernwpf.com/2019">
+    <Application.Resources>
+        <ResourceDictionary>
+            <!--CustomNavigationView-->
+            <SolidColorBrush x:Key="NavigationViewExpandedPaneBackground" Color="Transparent"/>
+            <SolidColorBrush x:Key="NavigationViewTopPaneBackground" Color="#202136"/>
+            <SolidColorBrush x:Key="NavigationViewItemForeground" Color="#DCDFEE"/>
+            <SolidColorBrush x:Key="TopNavigationViewItemForeground" Color="#DCDFEE"/>
+            <SolidColorBrush x:Key="NavigationViewItemForegroundSelected" Color="#F7F8FC"/>
+            <SolidColorBrush x:Key="TopNavigationViewItemForegroundSelected" Color="#F7F8FC"/>
+            <SolidColorBrush x:Key="NavigationViewItemForegroundPointerOver" Color="#F7F8FC" />
+            <SolidColorBrush x:Key="TopNavigationViewItemForegroundPointerOver" Color="#F7F8FC" />
+            <SolidColorBrush x:Key="NavigationViewItemForegroundPressed" Color="#878A99" />
+            <SolidColorBrush x:Key="TopNavigationViewItemForegroundPressed" Color="#878A99" />
+            <!--CustomToggleSwitch-->
+            <SolidColorBrush x:Key="ToggleSwitchFillOffPressed" Color="#545365" />
+            <SolidColorBrush x:Key="ToggleSwitchFillOnPressed" Color="#545365" />
+            <SolidColorBrush x:Key="ToggleSwitchFillOn" Color="#545365" />
+            <SolidColorBrush x:Key="ToggleSwitchFillOnPointerOver" Color="#545365" />
+            <!--CustomRadioButton-->
+            <SolidColorBrush x:Key="RadioButtonOuterEllipseCheckedFill" Color="#545365" />
+            <SolidColorBrush x:Key="RadioButtonOuterEllipseCheckedStroke" Color="#545365" />
+            <SolidColorBrush x:Key="RadioButtonOuterEllipseStroke" Color="#545365" />
+            <SolidColorBrush x:Key="RadioButtonOuterEllipseCheckedStrokePointerOver" Color="#545365" />
+            <SolidColorBrush x:Key="RadioButtonOuterEllipseCheckedFillPointerOver" Color="#545365" />
+            <SolidColorBrush x:Key="RadioButtonOuterEllipseCheckedFillPressed" Color="#545365" />
+
+
+
+
+
+            <ResourceDictionary.MergedDictionaries>
+                <ui:ThemeResources />
+                <ui:XamlControlsResources />
+                <!-- Other merged dictionaries here -->
+            </ResourceDictionary.MergedDictionaries>
+            <!-- Other app resources here -->
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

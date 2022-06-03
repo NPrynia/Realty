@@ -1,0 +1,61 @@
+﻿<Page x:Class="Realty.Pages.History"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Realty.Pages" xmlns:ui="http://schemas.modernwpf.com/2019"
+      mc:Ignorable="d"
+      Background="#F7F8FC"
+      d:DesignHeight="450" d:DesignWidth="1000"
+      Title="History">
+    <Grid>
+       
+        
+        <ui:NavigationView x:Name="nv"
+                           Background="#202136"
+                           PaneDisplayMode="Top"
+                           ItemInvoked="nv_ItemInvoked"
+                       IsSettingsVisible="False"
+                       PaneTitle="Недвижимость"
+                       OpenPaneLength="300" 
+                       IsBackButtonVisible="Collapsed" 
+                       >
+
+
+            <ui:NavigationView.MenuItems>
+                <ui:NavigationViewItem Content="История продаж домов"
+                                   
+                                       ToolTipService.ToolTip="История продаж домов"
+                                       SelectsOnInvoked="False">
+                </ui:NavigationViewItem>
+                <ui:NavigationViewItem Content="История продаж квартир"
+                                      
+                                       ToolTipService.ToolTip="История продаж квартир"
+                                       SelectsOnInvoked="False"
+                                       >
+                </ui:NavigationViewItem>
+                <ui:NavigationViewItem Content="История аренд домовы"
+                                       ToolTipService.ToolTip="История аренд домов"
+                                       SelectsOnInvoked="False"
+                                       />
+                <ui:NavigationViewItem Content="История аренд квартир"
+                                       ToolTipService.ToolTip="История аренд квартир"
+                                       SelectsOnInvoked="False"
+                                       />
+
+            </ui:NavigationView.MenuItems>
+            <Grid>
+
+                <ui:Frame  Background="#DCDFEE"  x:Name="contentFrame">
+                    
+                    
+                </ui:Frame>
+
+            </Grid>
+
+        </ui:NavigationView>
+
+
+
+    </Grid>
+</Page>

@@ -1,0 +1,56 @@
+﻿<Window x:Class="Realty.Windows.Template"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Realty.Windows" xmlns:gu="https://github.com/GuOrg/Gu.Wpf.FlipView"
+        mc:Ignorable="d"
+        Title="Template" Height="450" Width="800">
+    <Grid>
+        <Border
+                   Margin="10"
+            Height="300" Width="300"
+            Background="#DCDFEE"
+            >
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="13*"/>
+                    <RowDefinition Height="7*"/>
+                </Grid.RowDefinitions>
+                <Border
+                    Height="3"
+                    Grid.Row="2"
+                    VerticalAlignment="Top"
+                    Background="#202136"
+                    />
+                <gu:FlipView>
+                    <Image Source="/Res/REALTY.png" />
+                    <Image Source="/Res/REALTY.png" />
+                </gu:FlipView>
+
+
+                <StackPanel
+                    Margin="10"
+                    Grid.Row="1"
+                    >
+                    <TextBlock
+                    FontSize="20"
+                    Margin="0 10 0 0 "
+                    FontFamily="Microsoft JhengHei UI Light"
+                    Text="52552"
+                    Foreground="#202136"
+                />
+                    <TextBlock
+                        Margin="0 15 0 0"
+                    FontFamily="Microsoft JhengHei UI Light"
+                    FontSize="20"
+                    Text="{Binding IDStreet.Name}"
+                    Foreground="#202136"
+                />
+                </StackPanel>
+
+
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

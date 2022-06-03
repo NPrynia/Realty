@@ -1,0 +1,82 @@
+﻿<Window x:Class="Realty.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Realty" xmlns:ui="http://schemas.modernwpf.com/2019"
+         mc:Ignorable="d"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        MinHeight="700" MinWidth="1200"
+        Title="Главное окно" Height="800" Width="1390">
+    <Grid>
+      
+        <ui:NavigationView x:Name="nv"
+                           Background="#202136"
+                           ItemInvoked="nv_ItemInvoked"
+                       PaneDisplayMode="Auto"
+                       IsSettingsVisible="False"
+                       PaneTitle="Недвижимость"
+                       OpenPaneLength="300" 
+                       IsBackButtonVisible="Collapsed" 
+                       >
+
+
+            <ui:NavigationView.MenuItems>
+                <ui:NavigationViewItem Content="Покупка"
+                                       Icon="shop" 
+                                       ToolTipService.ToolTip="Покупка недвижимости"
+                                       SelectsOnInvoked="False">
+                    <ui:NavigationViewItem.MenuItems>
+                        <ui:NavigationViewItem Content="Дома" Icon="Street" ToolTipService.ToolTip="Покупка дома" Tag="SamplePage3"/>
+                        <ui:NavigationViewItem Content="Квартиры" Icon="home" ToolTipService.ToolTip="Покупка квартиры" Tag="SamplePage4"/>
+                    </ui:NavigationViewItem.MenuItems>
+                </ui:NavigationViewItem>
+                <ui:NavigationViewItem Content="Аренда"
+                                       Icon="Calendar" 
+                                       ToolTipService.ToolTip="Аренда недвижимости"
+                                       SelectsOnInvoked="False"
+                                       >
+                    <ui:NavigationViewItem.MenuItems>
+                        <ui:NavigationViewItem Content="Дома" Icon="Street" ToolTipService.ToolTip="Аренда дома" Tag="SamplePage5"/>
+                        <ui:NavigationViewItem Content="Квартиры" Icon="home" ToolTipService.ToolTip="Аренда квартиры" Tag="SamplePage6"/>
+                    </ui:NavigationViewItem.MenuItems>
+                </ui:NavigationViewItem>
+                <ui:NavigationViewItem Content="Действующие аренды"
+                                       Icon="GoToToday" 
+                                       ToolTipService.ToolTip="Действующие аренды"
+                                       SelectsOnInvoked="False"
+                                       />
+                <ui:NavigationViewItem Content="Добавить недвижимость"
+                                       Icon="Add"
+                                       ToolTipService.ToolTip="Добавить недвижимость"
+                                       SelectsOnInvoked="False"
+                                       />
+                <ui:NavigationViewItem Content="История"
+                                       Icon="Library"
+                                       ToolTipService.ToolTip="История"
+                                       SelectsOnInvoked="False"
+                                       />
+
+            </ui:NavigationView.MenuItems>
+            <ui:NavigationView.FooterMenuItems>
+                <ui:NavigationViewItem Content="Выход" 
+                                       ToolTipService.ToolTip="Выход"
+                                       Tag="Выход" Icon="Clear" />
+
+            </ui:NavigationView.FooterMenuItems>
+            <Grid>
+                <ui:Frame  Background="#DCDFEE"  x:Name="contentFrame"/>
+                <Border  HorizontalAlignment="Stretch"
+                Height="30"
+                         Name="borderDrag"
+                VerticalAlignment="Top"
+                MouseLeftButtonDown="Border_MouseLeftButtonDown"
+                 Background="Transparent"
+                 MouseDown="Window_MouseDown" >
+                </Border>
+            </Grid>
+
+        </ui:NavigationView>
+    </Grid>
+</Window>

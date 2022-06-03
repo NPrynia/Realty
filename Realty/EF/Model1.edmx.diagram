@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4efede41cb53487f816502e92396e38a" Name="Diagram1">
+        <EntityTypeShape EntityType="RealttyModel.Apartment" Width="1.5" PointX="5.25" PointY="5.625" />
+        <EntityTypeShape EntityType="RealttyModel.City" Width="1.5" PointX="0.75" PointY="9.625" />
+        <EntityTypeShape EntityType="RealttyModel.Client" Width="1.5" PointX="8.25" PointY="2.25" />
+        <EntityTypeShape EntityType="RealttyModel.House" Width="1.5" PointX="5.25" PointY="12.5" />
+        <EntityTypeShape EntityType="RealttyModel.ImageApartment" Width="1.5" PointX="7.5" PointY="9.875" />
+        <EntityTypeShape EntityType="RealttyModel.ImageHouse" Width="1.5" PointX="7.5" PointY="20.625" />
+        <EntityTypeShape EntityType="RealttyModel.NumberHouse" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="RealttyModel.RentApartment" Width="1.5" PointX="10.5" PointY="6.25" />
+        <EntityTypeShape EntityType="RealttyModel.RentHouse" Width="1.5" PointX="10.5" PointY="13.5" />
+        <EntityTypeShape EntityType="RealttyModel.SaleApartment" Width="1.5" PointX="7.5" PointY="6.5" />
+        <EntityTypeShape EntityType="RealttyModel.SaleHouse" Width="1.5" PointX="7.5" PointY="13.75" />
+        <EntityTypeShape EntityType="RealttyModel.Street" Width="1.5" PointX="3" PointY="9.375" />
+        <EntityTypeShape EntityType="RealttyModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="RealttyModel.Adress" Width="1.5" PointX="0.75" PointY="3.75" />
+        <AssociationConnector Association="RealttyModel.FK_Apartment_Street" />
+        <AssociationConnector Association="RealttyModel.FK_ImageApartment_Apartment" />
+        <AssociationConnector Association="RealttyModel.FK_RentApartment_Apartment1" />
+        <AssociationConnector Association="RealttyModel.FK_SaleApartment_Apartment1" />
+        <AssociationConnector Association="RealttyModel.FK_Street_City1" />
+        <AssociationConnector Association="RealttyModel.FK_Rent_Client" />
+        <AssociationConnector Association="RealttyModel.FK_RentApartment_Client" />
+        <AssociationConnector Association="RealttyModel.FK_SaleApartment_Client" />
+        <AssociationConnector Association="RealttyModel.FK_SaleHouse_Client" />
+        <AssociationConnector Association="RealttyModel.FK_House_Street" />
+        <AssociationConnector Association="RealttyModel.FK_ImageProperty_House" />
+        <AssociationConnector Association="RealttyModel.FK_Rentt_House" />
+        <AssociationConnector Association="RealttyModel.FK_Sale_House1" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

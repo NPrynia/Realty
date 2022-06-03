@@ -1,0 +1,390 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище RealttyModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Apartment">
+    <Key>
+      <PropertyRef Name="IDApartment" />
+    </Key>
+    <Property Name="IDApartment" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NumberHouse" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="IDStreet" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="100" />
+    <Property Name="ForRent" Type="bit" Nullable="false" />
+    <Property Name="NumberApartment" Type="int" Nullable="false" />
+    <Property Name="Cost" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="QtyFloor" Type="int" Nullable="false" />
+    <Property Name="QtyRoom" Type="int" Nullable="false" />
+    <Property Name="Space" Type="float" Nullable="false" />
+    <Property Name="HasBalcony" Type="bit" Nullable="false" />
+    <Property Name="IsDelete" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="IDCity" />
+    </Key>
+    <Property Name="IDCity" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="80" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="IDClient" />
+    </Key>
+    <Property Name="IDClient" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Surname" Type="nvarchar" MaxLength="80" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="80" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="NumberPassport" Type="nchar" MaxLength="4" Nullable="false" />
+    <Property Name="SerialPassport" Type="nchar" MaxLength="6" Nullable="false" />
+  </EntityType>
+  <EntityType Name="House">
+    <Key>
+      <PropertyRef Name="IDHouse" />
+    </Key>
+    <Property Name="IDHouse" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NumberHouse" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="IDStreet" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="100" />
+    <Property Name="ForRent" Type="bit" Nullable="false" />
+    <Property Name="Cost" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="QtyFloor" Type="int" Nullable="false" />
+    <Property Name="QtyRoom" Type="int" Nullable="false" />
+    <Property Name="Space" Type="float" Nullable="false" />
+    <Property Name="SpaceArea" Type="float" Nullable="false" />
+    <Property Name="HasPool" Type="bit" Nullable="false" />
+    <Property Name="HasBath" Type="bit" Nullable="false" />
+    <Property Name="HasPlumbing" Type="bit" Nullable="false" />
+    <Property Name="HasGas" Type="bit" Nullable="false" />
+    <Property Name="HasElectricity" Type="bit" Nullable="false" />
+    <Property Name="Isdelete" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ImageApartment">
+    <Key>
+      <PropertyRef Name="IDImageApartment" />
+    </Key>
+    <Property Name="IDImageApartment" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Image" Type="varbinary(max)" Nullable="false" />
+    <Property Name="IDApartment" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ImageHouse">
+    <Key>
+      <PropertyRef Name="IDImageHouse" />
+    </Key>
+    <Property Name="IDImageHouse" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Image" Type="varbinary(max)" Nullable="false" />
+    <Property Name="IDHouse" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NumberHouse">
+    <Key>
+      <PropertyRef Name="IDNumHouse" />
+    </Key>
+    <Property Name="IDNumHouse" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Number" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="IDStreet" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RentApartment">
+    <Key>
+      <PropertyRef Name="IDRentApartment" />
+    </Key>
+    <Property Name="IDRentApartment" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDApartment" Type="int" Nullable="false" />
+    <Property Name="IDClient" Type="int" Nullable="false" />
+    <Property Name="DateStartRent" Type="date" Nullable="false" />
+    <Property Name="DateEndRent" Type="date" Nullable="false" />
+    <Property Name="FinalCost" Type="decimal" Precision="13" Scale="2" Nullable="false" />
+    <Property Name="IsDelete" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RentHouse">
+    <Key>
+      <PropertyRef Name="IDRent" />
+    </Key>
+    <Property Name="IDRent" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDHouse" Type="int" />
+    <Property Name="IDClient" Type="int" Nullable="false" />
+    <Property Name="DateStartRent" Type="date" Nullable="false" />
+    <Property Name="DateEndRent" Type="date" Nullable="false" />
+    <Property Name="FinalCost" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="IsDelete" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SaleApartment">
+    <Key>
+      <PropertyRef Name="IDSaleApartment" />
+    </Key>
+    <Property Name="IDSaleApartment" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDApartment" Type="int" Nullable="false" />
+    <Property Name="IDCLient" Type="int" Nullable="false" />
+    <Property Name="Date" Type="date" Nullable="false" />
+    <Property Name="IsDelete" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SaleHouse">
+    <Key>
+      <PropertyRef Name="IDSaleHouse" />
+    </Key>
+    <Property Name="IDSaleHouse" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDHouse" Type="int" />
+    <Property Name="IDClient" Type="int" Nullable="false" />
+    <Property Name="Date" Type="date" Nullable="false" />
+    <Property Name="IsDelete" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Street">
+    <Key>
+      <PropertyRef Name="IDStreet" />
+    </Key>
+    <Property Name="IDStreet" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="80" Nullable="false" />
+    <Property Name="IDCity" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "RealtyNew.dbo.Adress" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+  <EntityType Name="Adress">
+    <Key>
+      <PropertyRef Name="IDStreet" />
+      <PropertyRef Name="IDCity" />
+    </Key>
+    <Property Name="Adress" Type="nvarchar" MaxLength="162" />
+    <Property Name="IDStreet" Type="int" Nullable="false" />
+    <Property Name="IDCity" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Apartment_Street">
+    <End Role="Street" Type="Self.Street" Multiplicity="1" />
+    <End Role="Apartment" Type="Self.Apartment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Street">
+        <PropertyRef Name="IDStreet" />
+      </Principal>
+      <Dependent Role="Apartment">
+        <PropertyRef Name="IDStreet" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_House_Street">
+    <End Role="Street" Type="Self.Street" Multiplicity="1" />
+    <End Role="House" Type="Self.House" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Street">
+        <PropertyRef Name="IDStreet" />
+      </Principal>
+      <Dependent Role="House">
+        <PropertyRef Name="IDStreet" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ImageApartment_Apartment">
+    <End Role="Apartment" Type="Self.Apartment" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ImageApartment" Type="Self.ImageApartment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Apartment">
+        <PropertyRef Name="IDApartment" />
+      </Principal>
+      <Dependent Role="ImageApartment">
+        <PropertyRef Name="IDApartment" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ImageProperty_House">
+    <End Role="House" Type="Self.House" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ImageHouse" Type="Self.ImageHouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="House">
+        <PropertyRef Name="IDHouse" />
+      </Principal>
+      <Dependent Role="ImageHouse">
+        <PropertyRef Name="IDHouse" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rent_Client">
+    <End Role="Client" Type="Self.Client" Multiplicity="1" />
+    <End Role="RentHouse" Type="Self.RentHouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="IDClient" />
+      </Principal>
+      <Dependent Role="RentHouse">
+        <PropertyRef Name="IDClient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RentApartment_Apartment1">
+    <End Role="Apartment" Type="Self.Apartment" Multiplicity="1" />
+    <End Role="RentApartment" Type="Self.RentApartment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Apartment">
+        <PropertyRef Name="IDApartment" />
+      </Principal>
+      <Dependent Role="RentApartment">
+        <PropertyRef Name="IDApartment" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RentApartment_Client">
+    <End Role="Client" Type="Self.Client" Multiplicity="1" />
+    <End Role="RentApartment" Type="Self.RentApartment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="IDClient" />
+      </Principal>
+      <Dependent Role="RentApartment">
+        <PropertyRef Name="IDClient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rentt_House">
+    <End Role="House" Type="Self.House" Multiplicity="0..1" />
+    <End Role="RentHouse" Type="Self.RentHouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="House">
+        <PropertyRef Name="IDHouse" />
+      </Principal>
+      <Dependent Role="RentHouse">
+        <PropertyRef Name="IDHouse" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sale_House1">
+    <End Role="House" Type="Self.House" Multiplicity="0..1" />
+    <End Role="SaleHouse" Type="Self.SaleHouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="House">
+        <PropertyRef Name="IDHouse" />
+      </Principal>
+      <Dependent Role="SaleHouse">
+        <PropertyRef Name="IDHouse" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SaleApartment_Apartment1">
+    <End Role="Apartment" Type="Self.Apartment" Multiplicity="1" />
+    <End Role="SaleApartment" Type="Self.SaleApartment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Apartment">
+        <PropertyRef Name="IDApartment" />
+      </Principal>
+      <Dependent Role="SaleApartment">
+        <PropertyRef Name="IDApartment" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SaleApartment_Client">
+    <End Role="Client" Type="Self.Client" Multiplicity="1" />
+    <End Role="SaleApartment" Type="Self.SaleApartment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="IDClient" />
+      </Principal>
+      <Dependent Role="SaleApartment">
+        <PropertyRef Name="IDCLient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SaleHouse_Client">
+    <End Role="Client" Type="Self.Client" Multiplicity="1" />
+    <End Role="SaleHouse" Type="Self.SaleHouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="IDClient" />
+      </Principal>
+      <Dependent Role="SaleHouse">
+        <PropertyRef Name="IDClient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Street_City1">
+    <End Role="City" Type="Self.City" Multiplicity="1" />
+    <End Role="Street" Type="Self.Street" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="IDCity" />
+      </Principal>
+      <Dependent Role="Street">
+        <PropertyRef Name="IDCity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище RealttyModelContainer">
+    <EntitySet Name="Apartment" EntityType="Self.Apartment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="House" EntityType="Self.House" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ImageApartment" EntityType="Self.ImageApartment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ImageHouse" EntityType="Self.ImageHouse" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NumberHouse" EntityType="Self.NumberHouse" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RentApartment" EntityType="Self.RentApartment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RentHouse" EntityType="Self.RentHouse" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SaleApartment" EntityType="Self.SaleApartment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SaleHouse" EntityType="Self.SaleHouse" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Street" EntityType="Self.Street" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Adress" EntityType="Self.Adress" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Adress].[Adress] AS [Adress], 
+    [Adress].[IDStreet] AS [IDStreet], 
+    [Adress].[IDCity] AS [IDCity]
+    FROM [dbo].[Adress] AS [Adress]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Apartment_Street" Association="Self.FK_Apartment_Street">
+      <End Role="Street" EntitySet="Street" />
+      <End Role="Apartment" EntitySet="Apartment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_House_Street" Association="Self.FK_House_Street">
+      <End Role="Street" EntitySet="Street" />
+      <End Role="House" EntitySet="House" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ImageApartment_Apartment" Association="Self.FK_ImageApartment_Apartment">
+      <End Role="Apartment" EntitySet="Apartment" />
+      <End Role="ImageApartment" EntitySet="ImageApartment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ImageProperty_House" Association="Self.FK_ImageProperty_House">
+      <End Role="House" EntitySet="House" />
+      <End Role="ImageHouse" EntitySet="ImageHouse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rent_Client" Association="Self.FK_Rent_Client">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="RentHouse" EntitySet="RentHouse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RentApartment_Apartment1" Association="Self.FK_RentApartment_Apartment1">
+      <End Role="Apartment" EntitySet="Apartment" />
+      <End Role="RentApartment" EntitySet="RentApartment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RentApartment_Client" Association="Self.FK_RentApartment_Client">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="RentApartment" EntitySet="RentApartment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rentt_House" Association="Self.FK_Rentt_House">
+      <End Role="House" EntitySet="House" />
+      <End Role="RentHouse" EntitySet="RentHouse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sale_House1" Association="Self.FK_Sale_House1">
+      <End Role="House" EntitySet="House" />
+      <End Role="SaleHouse" EntitySet="SaleHouse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SaleApartment_Apartment1" Association="Self.FK_SaleApartment_Apartment1">
+      <End Role="Apartment" EntitySet="Apartment" />
+      <End Role="SaleApartment" EntitySet="SaleApartment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SaleApartment_Client" Association="Self.FK_SaleApartment_Client">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="SaleApartment" EntitySet="SaleApartment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SaleHouse_Client" Association="Self.FK_SaleHouse_Client">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="SaleHouse" EntitySet="SaleHouse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Street_City1" Association="Self.FK_Street_City1">
+      <End Role="City" EntitySet="City" />
+      <End Role="Street" EntitySet="Street" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
